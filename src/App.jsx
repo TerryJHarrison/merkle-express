@@ -11,6 +11,12 @@ import JavaScriptCode from "./components/JavaScriptCode";
 import SolidityCode from "./components/SolidityCode";
 import TabPanel from "./components/TabPanel";
 
+const tabIndexIds = [
+  "merkle-tree",
+  "java-script",
+  "solidity"
+];
+
 const App = () => {
   init("583dd5bcdd6c5501fbe7dd9795d35c85");
   const styles = makeStyles(applicationStyles)();
@@ -20,7 +26,12 @@ const App = () => {
 
   const [currentTab, setCurrentTab] = React.useState(0);
 
-  const handleTabChange = (event, newValue) => setCurrentTab(newValue);
+  const handleTabChange = (event, index) => {
+    setCurrentTab(index);
+    track('View Instructions', {
+      instructions: tabIndexIds[index]
+    });
+  };
   const handleAddressesChange = event => setAddressListInput(event.target.value);
 
   const createTree = () => {
@@ -53,9 +64,9 @@ const App = () => {
       {merkleRoot &&
       <Container className={styles.topMargined}>
         <Tabs value={currentTab} onChange={handleTabChange} aria-label="basic tabs example">
-          <Tab label="Merkle Tree" id="0" aria-controls="simple-tabpanel-0" />
-          <Tab label="JavaScript" id="1" aria-controls="simple-tabpanel-1" />
-          <Tab label="Solidity" id="2" aria-controls="simple-tabpanel-2" />
+          <Tab label="Merkle Tree" id="merkle-tree" aria-controls="simple-tabpanel-merkle-tree" />
+          <Tab label="JavaScript" id="java-script" aria-controls="simple-tabpanel-java-script" />
+          <Tab label="Solidity" id="solidity" aria-controls="simple-tabpanel-solidity" />
         </Tabs>
 
         <TabPanel value={currentTab} index={0}>
