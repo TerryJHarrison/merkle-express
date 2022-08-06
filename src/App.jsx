@@ -22,7 +22,7 @@ const App = () => {
   const styles = makeStyles(applicationStyles)();
 
   const [merkleRoot, setMerkleRoot] = useState('');
-  const [addressListInput, setAddressListInput] = useState('0x78C298B1699BdF644Fa0b426e776E10605Ed0f46\n0x3e16AC55d2ee2b1582470C6C3d4BFc3Ea2962574');
+  const [addressListInput, setAddressListInput] = useState('');
 
   const [currentTab, setCurrentTab] = React.useState(0);
 
@@ -54,6 +54,7 @@ const App = () => {
         <TextField fullWidth
                    multiline
                    value={addressListInput}
+                   label={"0x78C298B1699BdF644Fa0b426e776E10605Ed0f46,0x3e16AC55d2ee2b1582470C6C3d4BFc3Ea2962574"}
                    onChange={handleAddressesChange}/>
         <Typography variant="h7">Separate addresses by commas, semi-colons, spaces, or newlines.</Typography><br/>
         <Button onClick={createTree} variant="outlined" className={styles.topMargined}>Generate</Button>
