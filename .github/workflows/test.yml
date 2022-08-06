@@ -4,7 +4,7 @@ on:
   pull_request:
 
 jobs:
-  build:
+  test-contracts:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -16,7 +16,9 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npm install -g truffle
 
-      - name: Test contracts
+      - name: Test
         run: npm run contracts:test
