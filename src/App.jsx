@@ -10,7 +10,7 @@ import { init, track } from '@amplitude/analytics-browser';
 
 const JavaScriptCode = ({styles, addressList}) => {
   return <>
-    <Typography variant="h3" className={styles.topPadded}>NodeJS</Typography>
+    <Typography variant="h3" className={styles.topPadded}>JavaScript</Typography>
     <Typography variant="h6" className={styles.topPadded}>Setup</Typography>
     <CodeBlock styles={styles} id="jsSetup" content="npm install merkeltreejs keccack256"/>
 
