@@ -2,8 +2,10 @@ import {Container, IconButton, Typography} from "@mui/material";
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import React from "react";
 import { track } from '@amplitude/analytics-browser';
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export const CodeBlock = ({styles, content, id}) => {
+  const isSmallScreen = useMediaQuery("(max-width:600px)");
 
   const copyToClipboard = () => {
     try {
@@ -22,10 +24,17 @@ export const CodeBlock = ({styles, content, id}) => {
 
   return (
     <>
+      {!isSmallScreen &&
       <IconButton onClick={copyToClipboard} className={styles.copyButton}>
         <ContentCopyIcon/>
       </IconButton>
-      <Container className={styles.codeBlock}>
+      }
+      <Container className={isSmallScreen ? styles.mobileCodeBlock : styles.codeBlock}>
+        {isSmallScreen &&
+        <IconButton onClick={copyToClipboard} className={styles.copyButton}>
+          <ContentCopyIcon/>
+        </IconButton>
+        }
         <Typography id={id} variant="code">{content}</Typography>
       </Container>
     </>

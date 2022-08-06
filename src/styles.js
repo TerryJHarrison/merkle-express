@@ -19,6 +19,16 @@ export default {
     paddingBottom: 12,
     paddingRight: 6
   },
+  mobileCodeBlock: {
+    backgroundColor: "lightgrey",
+    borderRadius: 10,
+    paddingTop: 12,
+    paddingBottom: 12,
+    paddingRight: 6,
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+    overflow: "hidden"
+  },
   copyButton: {
     float: "right",
     paddingTop: 0,

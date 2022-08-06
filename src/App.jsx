@@ -45,8 +45,6 @@ const App = () => {
     });
   }
 
-  const addressList = addressListInput.split(/[;,\n\r\s]+/g).filter(x => x !== "").map(x => <>&nbsp;&nbsp;&nbsp;&nbsp;{x},<br/></>);
-
   return (
     <Box>
       <Header/>
@@ -76,7 +74,7 @@ const App = () => {
         </TabPanel>
 
         <TabPanel value={currentTab} index={1}>
-          <JavaScriptCode styles={styles} addressList={addressList}/>
+          <JavaScriptCode styles={styles} addressListInput={addressListInput}/>
         </TabPanel>
 
         <TabPanel value={currentTab} index={2}>

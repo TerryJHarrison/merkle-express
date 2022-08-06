@@ -2,7 +2,8 @@ import {Divider, Typography} from "@mui/material";
 import CodeBlock from "./CodeBlock";
 import React from "react";
 
-const JavaScriptCode = ({styles, addressList}) => {
+const JavaScriptCode = ({styles, addressListInput}) => {
+  const addressList = addressListInput.split(/[;,\n\r\s]+/g).filter(x => x !== "").map(x => <>&nbsp;&nbsp;&nbsp;&nbsp;{x},<br/></>);
   return <>
     <Typography variant="h3" className={styles.topPadded}>JavaScript</Typography>
     <Typography variant="h6" className={styles.topPadded}>Setup</Typography>
