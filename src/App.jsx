@@ -6,6 +6,7 @@ import keccak256 from 'keccak256';
 import applicationStyles from "./styles";
 import CodeBlock from "./components/CodeBlock";
 import Header from "./components/Header";
+import { init, track } from '@amplitude/analytics-browser';
 
 const NodeJSCode = ({styles, addressList}) => {
   return <>
@@ -49,6 +50,7 @@ const SolidityCode = ({styles, merkleRoot}) => {
 }
 
 const App = () => {
+  init("583dd5bcdd6c5501fbe7dd9795d35c85");
   const styles = makeStyles(applicationStyles)();
 
   const [merkleRoot, setMerkleRoot] = useState('');
@@ -62,6 +64,9 @@ const App = () => {
     const tree = new MerkleTree(leaves, keccak256, {sortPairs: true})
     const root = tree.getHexRoot().toString()
     setMerkleRoot(root);
+    track('Generate Tree', {
+      numLeaves: leaves.length
+    });
   }
 
   const addressList = addressListInput.split(/[;,\n\r\s]+/g).filter(x => x !== "").map(x => <>&nbsp;&nbsp;&nbsp;&nbsp;{x},<br/></>);

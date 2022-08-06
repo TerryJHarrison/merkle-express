@@ -12,6 +12,7 @@
     "contracts:networks": "truffle networks"
   },
   "dependencies": {
+    "@amplitude/analytics-browser": "^1.1.2",
     "@babel/core": "7.6.0",
     "@date-io/moment": "^2.13.1",
     "@emotion/react": "^11.9.0",

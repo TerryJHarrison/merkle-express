@@ -1,6 +1,7 @@
 import {Container, IconButton, Typography} from "@mui/material";
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import React from "react";
+import { track } from '@amplitude/analytics-browser';
 
 export const CodeBlock = ({styles, content, id}) => {
 
@@ -11,6 +12,9 @@ export const CodeBlock = ({styles, content, id}) => {
       } else {
         navigator.clipboard.writeText(document.getElementById(id).innerText);
       }
+      track('Copy Code', {
+        textCopied: id
+      });
     } catch (e){
       console.warn("Could not copy text to clipboard", e);
     }
