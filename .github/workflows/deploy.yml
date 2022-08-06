@@ -9,8 +9,13 @@ on:
       - main
 
 jobs:
+  test:
+    uses: ./.github/workflows/test.yml
+
   build:
     runs-on: ubuntu-latest
+    needs:
+      - test
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
