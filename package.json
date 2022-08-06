@@ -6,7 +6,7 @@
     "client:start": "node scripts/start.js",
     "client:build": "node scripts/build.js",
     "client:test": "node scripts/test.js",
-    "client:deploy": "npm run client:build && cd build && aws --profile harrison s3 sync . s3://merkle.express",
+    "client:deploy": "npm run client:build && cd build && aws s3 sync . s3://merkle.express",
     "contracts:test": "truffle test",
     "contracts:compile": "truffle compile --all",
     "contracts:networks": "truffle networks"
