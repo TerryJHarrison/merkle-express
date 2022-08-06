@@ -63,9 +63,9 @@ const App = () => {
       {merkleRoot &&
       <Container className={styles.topMargined}>
         <Tabs value={currentTab} onChange={handleTabChange} aria-label="basic tabs example">
-          <Tab label="Merkle Tree" id="merkle-tree" aria-controls="simple-tabpanel-merkle-tree" />
-          <Tab label="JavaScript" id="java-script" aria-controls="simple-tabpanel-java-script" />
-          <Tab label="Solidity" id="solidity" aria-controls="simple-tabpanel-solidity" />
+          <Tab label="Merkle Tree" id="merkle-tree" aria-controls="simple-tabpanel-0" />
+          <Tab label="JavaScript" id="java-script" aria-controls="simple-tabpanel-1" />
+          <Tab label="Solidity" id="solidity" aria-controls="simple-tabpanel-2" />
         </Tabs>
 
         <TabPanel value={currentTab} index={0}>
