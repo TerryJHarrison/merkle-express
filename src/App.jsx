@@ -58,7 +58,7 @@ const App = () => {
                    value={addressListInput}
                    onChange={handleAddressesChange}/>
         <Typography variant="h7">Separate addresses by commas, semi-colons, spaces, or newlines.</Typography><br/>
-        <Button onClick={createTree} variant="outlined" className={styles.topMargined}>Generate Proof</Button>
+        <Button onClick={createTree} variant="outlined" className={styles.topMargined}>Generate</Button>
       </Container>
 
       {merkleRoot &&
