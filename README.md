@@ -9,3 +9,5 @@ Generates code for:
 - JavaScript
 - Solidity
 - And the raw merkle tree data
+
+[Report bugs](./SECURITY.md)

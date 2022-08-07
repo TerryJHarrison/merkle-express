@@ -14,5 +14,5 @@ currently being supported with security updates.
 You can email tjharrisonjr@gmail with any security enhancements or concerns.
 Expect a response back within a week, any bugs will gladly be addressed.
 
-I do not have the funds to offer a bug bounty unfortuneately but will happily 
+I do not have the funds to offer a meaningful bug bounty but will happily 
 give credit for any identified bugs and/or accepted fixes.
