@@ -10,4 +10,4 @@ Generates code for:
 - Solidity
 - And the raw merkle tree data
 
-[Report bugs](./SECURITY.md)
+[Report bugs](/SECURITY.md)
